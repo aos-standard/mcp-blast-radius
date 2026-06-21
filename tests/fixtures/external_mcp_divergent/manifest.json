@@ -1,0 +1,7 @@
+{
+  "name": "divergent-mcp-server",
+  "version": "0.1.0",
+  "aos_compliant": "v0.1",
+  "oracle_paths": ["evals/", "config/"],
+  "permitted_output_paths": ["docs/reports/"]
+}

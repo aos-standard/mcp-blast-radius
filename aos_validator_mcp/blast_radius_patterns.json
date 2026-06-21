@@ -1,0 +1,44 @@
+{
+  "network": [
+    "requests",
+    "httpx",
+    "aiohttp",
+    "urllib3",
+    "websockets",
+    "websocket",
+    "socketio",
+    "grpc",
+    "pycurl"
+  ],
+  "subprocess": [
+    "subprocess",
+    "pexpect",
+    "sh",
+    "plumbum"
+  ],
+  "remote-access": [
+    "paramiko",
+    "fabric",
+    "boto3",
+    "botocore",
+    "google-cloud",
+    "google.cloud",
+    "azure",
+    "minio",
+    "s3fs"
+  ],
+  "filesystem-broad": [
+    "shutil",
+    "pathlib",
+    "glob",
+    "tempfile",
+    "send2trash"
+  ],
+  "secrets": [
+    "keyring",
+    "cryptography",
+    "secretstorage",
+    "python-dotenv",
+    "dotenv"
+  ]
+}

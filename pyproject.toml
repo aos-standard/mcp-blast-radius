@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcp-blast-radius"
+version = "0.2.0"
+description = "MCP Blast-Radius Auditor — static blast radius extraction and CI divergence gate."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "AOS Standard Contributors" }]
+keywords = [
+  "mcp",
+  "blast-radius",
+  "static-analysis",
+  "supply-chain",
+  "agent-security",
+  "ci-gate",
+  "mcp-server",
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Security",
+  "Topic :: Software Development :: Quality Assurance",
+  "Typing :: Typed",
+]
+dependencies = ["mcp>=1.0.0"]
+
+[project.urls]
+Homepage = "https://pypi.org/project/mcp-blast-radius/"
+Documentation = "https://github.com/aos-standard/AOS-spec#compliance-validation-official"
+Repository = "https://github.com/aos-standard/mcp-blast-radius"
+Issues = "https://github.com/aos-standard/mcp-blast-radius/issues"
+
+[project.scripts]
+mcp-blast-radius = "aos_validator_mcp.server:main"
+mcp-blast-radius-gate = "aos_validator_mcp.gate_cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["aos_validator_mcp*"]
+
+[tool.setuptools.package-data]
+aos_validator_mcp = ["_validate_pure.py", "blast_radius.py", "blast_radius_patterns.json"]
