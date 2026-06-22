@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mcp-blast-radius"
-version = "0.2.0"
-description = "MCP Blast-Radius Auditor — static blast radius extraction and CI divergence gate."
+version = "0.2.2"
+description = "See what any MCP server can touch — static blast-radius report for every target; manifest optional for divergence detection."
 readme = "README.md"
 requires-python = ">=3.10"
 license = "MIT"
@@ -37,8 +37,8 @@ classifiers = [
 dependencies = ["mcp>=1.0.0"]
 
 [project.urls]
-Homepage = "https://pypi.org/project/mcp-blast-radius/"
-Documentation = "https://github.com/aos-standard/AOS-spec#compliance-validation-official"
+Homepage = "https://github.com/aos-standard/mcp-blast-radius"
+Documentation = "https://github.com/aos-standard/mcp-blast-radius#readme"
 Repository = "https://github.com/aos-standard/mcp-blast-radius"
 Issues = "https://github.com/aos-standard/mcp-blast-radius/issues"
 

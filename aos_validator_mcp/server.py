@@ -20,9 +20,11 @@ from aos_validator_mcp.validator import validate_agent
 mcp = FastMCP(
     "aos_compliance_validator",
     instructions=(
-        "MCP Blast-Radius Auditor — extract what an MCP server can touch and "
-        "detect declaration divergences. Default advisory mode returns judgment "
-        "without blocking. Set gate_mode=blocking to reject merges when divergences exist."
+        "MCP Blast-Radius Auditor — see what any MCP server can actually touch "
+        "(surface static analysis; no manifest required for blast-radius report). "
+        "With a manifest, also detect declaration divergences. Default advisory mode "
+        "returns judgment without blocking. Set gate_mode=blocking to reject merges "
+        "when divergences exist."
     ),
     json_response=True,
 )
@@ -120,7 +122,9 @@ def main() -> None:
         print(
             "usage: mcp-blast-radius [-h]\n\n"
             "MCP Blast-Radius Auditor (stdio transport).\n"
-            "Catch an MCP server that touches files it said it wouldn't.\n\n"
+            "See what any MCP server can actually touch — before you add it to your agent.\n"
+            "No manifest? You still get the full blast-radius report.\n"
+            "With a manifest, also catches declaration divergences and blocks CI merges.\n\n"
             "Environment:\n"
             "  AOS_VALIDATOR_TARGET_DIR   default scan root\n"
             "  AOS_VALIDATOR_MCP_LOG      local JSONL log path (never sent externally)\n"

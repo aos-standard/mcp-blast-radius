@@ -72,8 +72,9 @@ def main() -> int:
     parser = argparse.ArgumentParser(
         description=(
             "MCP Blast-Radius Auditor — CI gate. "
-            "Catch an MCP server that touches files it said it wouldn't. "
-            "Default gate_mode=blocking — divergences or violations exit 1."
+            "See what any MCP server can actually touch (no manifest required). "
+            "With a manifest, also catches where code goes beyond what it claims — "
+            "and blocks the merge in CI. Default gate_mode=blocking — divergences exit 1."
         ),
     )
     parser.add_argument(
