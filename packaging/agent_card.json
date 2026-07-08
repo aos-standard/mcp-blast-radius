@@ -1,6 +1,6 @@
 {
   "name": "mcp-blast-radius",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "display_name": "MCP Blast-Radius Auditor",
   "category": "security / compliance / MCP observability",
   "description": "See what any MCP server can actually touch — before you add it to your agent. No manifest? You still get the full blast-radius report. Add a manifest to also catch divergences.",
@@ -22,7 +22,7 @@
       "description": "Wiring smoke test"
     }
   ],
-  "install": "pip install mcp-blast-radius==0.2.2",
+  "install": "pip install mcp-blast-radius==0.2.3",
   "usage": {
     "cli": "mcp-blast-radius-gate --gate-mode advisory --target-dir /path/to/mcp-server",
     "gate_mode": {
