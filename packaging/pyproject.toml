@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mcp-blast-radius"
-version = "0.2.3"
+version = "0.2.4"
 description = "See what any MCP server can touch — static blast-radius report for every target; manifest optional for divergence detection."
 readme = "README.md"
 requires-python = ">=3.10"

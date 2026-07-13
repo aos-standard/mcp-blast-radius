@@ -1,5 +1,7 @@
 # MCP Blast-Radius Auditor
 
+<!-- mcp-name: io.github.aos-standard/mcp-blast-radius -->
+
 > **See what any MCP server can actually touch — before you add it to your agent.**
 
 No manifest? You still get the full blast-radius report. Add a manifest to also catch divergences.
@@ -15,7 +17,7 @@ Statically extract what a third-party MCP server can reach (files, network, subp
 **1 — Install & scan**
 
 ```bash
-pip install mcp-blast-radius==0.2.3
+pip install mcp-blast-radius==0.2.4
 mcp-blast-radius-gate --gate-mode advisory --target-dir /path/to/mcp-server
 ```
 
