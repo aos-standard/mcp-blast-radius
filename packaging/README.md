@@ -40,6 +40,8 @@ Undeclared capability is usually drift, not malice. Treat network/subprocess cou
 
 Ran a clean scan and want a signed README badge? [Open a badge application](https://github.com/aos-standard/mcp-blast-radius/issues/new?template=badge-application.yml) — paste your command and JSON. Free, 90-day attestation, no phone-home. Criteria: [BADGE_CRITERIA.md](BADGE_CRITERIA.md).
 
+To verify any published attestation independently: `pip install cryptography`, then run `packaging/scripts/verify_attestation.py` (accepts local paths or HTTPS URLs). See [BADGE_CRITERIA.md §Verify](BADGE_CRITERIA.md#verify-any-badge).
+
 ---
 
 ## Machine-readable metadata

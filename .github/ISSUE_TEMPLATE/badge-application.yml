@@ -1,0 +1,68 @@
+name: Audit badge application
+description: Apply for an AOS-audited README badge after you run mcp-blast-radius yourself (opt-in only).
+title: "[badge] "
+labels:
+  - badge-application
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Opt-in only.** We do not scan your repo unless you ask. Run the scan locally, paste the output here, and we review the machine result.
+
+        Criteria: [BADGE_CRITERIA.md](https://github.com/aos-standard/mcp-blast-radius/blob/main/BADGE_CRITERIA.md)
+
+  - type: input
+    id: repo_url
+    attributes:
+      label: Repository URL
+      description: Public GitHub URL of the MCP server you scanned
+      placeholder: https://github.com/your-org/your-mcp-server
+    validations:
+      required: true
+
+  - type: input
+    id: scan_version
+    attributes:
+      label: mcp-blast-radius version
+      description: Version you used (e.g. 0.2.4)
+      placeholder: "0.2.4"
+    validations:
+      required: true
+
+  - type: input
+    id: scanned_path
+    attributes:
+      label: Path scanned inside the repo
+      description: Directory you passed to --target-dir (e.g. src/ or .)
+      placeholder: src/
+    validations:
+      required: true
+
+  - type: textarea
+    id: scan_command
+    attributes:
+      label: Exact command you ran
+      description: Copy-paste the full command (redact local absolute paths if you prefer)
+      placeholder: mcp-blast-radius-gate --gate-mode advisory --target-dir src/
+    validations:
+      required: true
+
+  - type: textarea
+    id: scan_output
+    attributes:
+      label: Scan JSON output
+      description: Paste the JSON stdout from mcp-blast-radius-gate (redact secrets and local paths)
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: attestations
+    attributes:
+      label: Confirm
+      options:
+        - label: I ran this scan myself on the repo above (no third-party scan on my behalf)
+          required: true
+        - label: I understand the badge expires after 90 days and I can re-apply
+          required: true
+        - label: I agree to display the badge only while the attestation is valid
+          required: true
