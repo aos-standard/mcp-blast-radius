@@ -2,6 +2,8 @@
 
 <!-- mcp-name: io.github.aos-standard/mcp-blast-radius -->
 
+[![AOS audited](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/aos-standard/catalog/main/attestations/endpoints/aos-standard__mcp-blast-radius.json)](https://github.com/aos-standard/mcp-blast-radius/blob/main/BADGE_CRITERIA.md)
+
 > **See what any MCP server can actually touch — before you add it to your agent.**
 
 No manifest? You still get the full blast-radius report. Add a manifest to also catch divergences.
@@ -14,12 +16,31 @@ Statically extract what a third-party MCP server can reach (files, network, subp
 
 ## Try it in 3 steps
 
-**1 — Install & scan**
+**① Scan your server in one command**
 
 ```bash
-pip install mcp-blast-radius==0.2.4
-mcp-blast-radius-gate --gate-mode advisory --target-dir /path/to/mcp-server
+pip install mcp-blast-radius==0.2.5
+mcp-blast-radius-gate --gate-mode advisory --target-dir /path/to/your-mcp-server
 ```
+
+Point `--target-dir` at your shipping package root (e.g. `src/`). Default scope excludes tests, docs, and scripts.
+
+**② Read the JSON**
+
+| Field | What it means |
+|-------|----------------|
+| `gate_pass` | Scan finished (`advisory` = report either way; `blocking` = exit 1 on divergences) |
+| `blocking_reasons` | Lines starting with `DIVERGENCE:` = declared vs. observed mismatch (if you ship a manifest) |
+| `blast_radius` | Static capability surface (network, subprocess, env, filesystem) |
+| `confidence` labels | `declared` / `observed-static` / `cannot-determine` — static only, upper bounds |
+
+Undeclared capability is usually drift, not malice. Treat network/subprocess counts as **upper bounds**, not confirmed traffic.
+
+**③ Apply for an audit badge (optional, opt-in)**
+
+Ran a clean scan and want a signed README badge? [Open a badge application](https://github.com/aos-standard/mcp-blast-radius/issues/new?template=badge-application.yml) — paste your command and JSON. Free, 90-day attestation, no phone-home. Criteria: [BADGE_CRITERIA.md](BADGE_CRITERIA.md).
+
+---
 
 ## Machine-readable metadata
 
@@ -27,14 +48,18 @@ mcp-blast-radius-gate --gate-mode advisory --target-dir /path/to/mcp-server
 - **Catalog entry** (pricing, install, MCP endpoint): [aos-standard/catalog](https://raw.githubusercontent.com/aos-standard/catalog/main/catalog.json)
 - **Spec**: [AOS-v0.1](https://github.com/aos-standard/AOS-spec)
 
-**2 — Example target** (any cloned MCP repo root)
+## Example walkthrough
 
 ```bash
 git clone --depth 1 https://github.com/oraios/serena.git /tmp/serena
 mcp-blast-radius-gate --gate-mode advisory --target-dir /tmp/serena
 ```
 
-**3 — Report findings** — [Open a GitHub issue](https://github.com/aos-standard/mcp-blast-radius/issues/new) with your JSON output (structured template loads automatically).
+Inspect `blast_radius` and any `DIVERGENCE:` lines in `blocking_reasons`.
+
+## Report a scan question
+
+[Open a GitHub issue](https://github.com/aos-standard/mcp-blast-radius/issues/new) with your JSON output (structured template loads automatically).
 
 ## 30-second scan
 

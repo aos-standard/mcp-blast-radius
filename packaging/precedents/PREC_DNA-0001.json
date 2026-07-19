@@ -1,0 +1,19 @@
+{
+  "precedent_id": "PREC_DNA-0001",
+  "pain": "Staff store receipt images, manually transcribe each field (including a 15-character alphanumeric registration number) into the corporate expense system, attach the receipt image, and submit. About five minutes per item; roughly thirty items per month (about 150 minutes per month).",
+  "facts": "Sending a smartphone photo of the receipt is the only human input before automation runs the rest. Remaining human work is capture plus a final confirmation step. Automation has been in production since approximately April 2026. Cumulative volume is about 300 items (estimated).",
+  "mechanism": "Image capture, file compression, OCR extraction, structured JSON (date, amount, pickup and drop-off locations, registration number), WBS charge-code resolution, automated browser entry into the expense system, and submission. Four skills exchange intermediate data through JSON files on disk.",
+  "rules": [
+    "The highest-leverage break in an evidence-processing chain is the image-to-structured-data step; keeping one human confirmation on structured values minimizes total effort more than chasing marginal OCR accuracy alone.",
+    "Browser entry depends on UI selectors; assume UI changes will break flows and isolate selector knowledge inside dedicated skills.",
+    "Do not bypass SSO or managed-device authentication; reuse an existing authenticated browser profile through supported channels.",
+    "When the expense system accepts JPEG originals directly, manual PDF conversion is redundant — verify accepted attachment formats before building extra conversion steps."
+  ],
+  "implementation_requirements": [
+    "OCR engine (image to text)",
+    "Image compression library",
+    "Browser automation (for example Playwright) with SSO profile reuse",
+    "Inter-skill data handoff via JSON files (no direct cross-skill imports)",
+    "Form structure knowledge for the expense system (selector sets)"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "entries": [
+    {
+      "precedent_id": "PREC_DNA-0001",
+      "date": "2026-07-16",
+      "title": "Receipt-processing chain: taxi expense settlement",
+      "abstract": "A four-skill automation chain removes manual entry from receipt photos via OCR, JSON handoffs, and browser automation with SSO profile reuse. One human checkpoint remains at structured-data confirmation.",
+      "business_dna_label": "evidence-processing chain",
+      "chain_types": [
+        "evidence",
+        "posting"
+      ],
+      "estimated_market_value": 0,
+      "artifact_root_hash": "45914a6713365ccd5de6730436006478c1c298ccbea9b01a9dee7d0e6cda9648",
+      "ira_sig": "IRA-SIG-20260716212424601895-74f0cfc04b9412fabf431e512f53036e7d00ed5b896a3a68252338cedcd7597eacc7b5bf3fa6bfe96c297c1ec39d3b4a418755a66ee38e88bcef11e39c12dc01",
+      "sha256_bundle_body": "3f398f6e818144c8c2dfbe4d87180576220720e7ee565ab79b008d7a9a84e788",
+      "spec": "https://github.com/aos-standard/AOS-spec"
+    }
+  ]
+}

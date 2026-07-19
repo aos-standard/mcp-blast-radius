@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mcp-blast-radius"
-version = "0.2.4"
+version = "0.2.5"
 description = "See what any MCP server can touch — static blast-radius report for every target; manifest optional for divergence detection."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -50,7 +50,8 @@ mcp-blast-radius-gate = "aos_validator_mcp.gate_cli:main"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["aos_validator_mcp*"]
+include = ["aos_validator_mcp*", "precedents*"]
 
 [tool.setuptools.package-data]
 aos_validator_mcp = ["_validate_pure.py", "blast_radius.py", "blast_radius_patterns.json"]
+precedents = ["*.json"]

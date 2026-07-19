@@ -3,7 +3,7 @@
   "name": "io.github.aos-standard/mcp-blast-radius",
   "title": "MCP Blast-Radius Auditor",
   "description": "Static blast-radius audit for MCP servers before agent install. Manifest optional.",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "websiteUrl": "https://raw.githubusercontent.com/aos-standard/catalog/main/catalog.json",
   "repository": {
     "url": "https://github.com/aos-standard/mcp-blast-radius",
@@ -15,7 +15,7 @@
       "registryType": "pypi",
       "registryBaseUrl": "https://pypi.org",
       "identifier": "mcp-blast-radius",
-      "version": "0.2.4",
+      "version": "0.2.5",
       "runtimeHint": "uvx",
       "transport": {
         "type": "stdio"
